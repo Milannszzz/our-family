@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Milan's - Omilana Family</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .family-member-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .family-member-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .family-photo {
+            transition: all 0.5s ease;
+        }
+        
+        .family-photo:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #4f46e5;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #4f46e5;
+            left: -10px;
+            top: 0;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xl">O</div>
+                <h1 class="title-font text-2xl font-bold text-gray-800">THE MILAN'S</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-600 hover:text-indigo-600">Home</a>
+                <a href="#family" class="nav-link text-gray-600 hover:text-indigo-600">Our Family</a>
+                <a href="#story" class="nav-link text-gray-600 hover:text-indigo-600">Our Story</a>
+                <a href="#gallery" class="nav-link text-gray-600 hover:text-indigo-600">Gallery</a>
+            </nav>
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="title-font text-4xl md:text-6xl font-bold mb-4">The Omilana Family</h1>
+                <p class="text-xl mb-8">"Family is not an important thing. It's everything." - Michael J. Fox</p>
+                <div class="flex space-x-4">
+                    <button class="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Our Values</button>
+                    <button class="border-2 border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition">Family Tree</button>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-2xl p-2 floating">
+                    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Family illustration" class="rounded-xl w-full h-auto shadow-xl">
+                </div>
+                <div class="absolute -bottom-5 -left-5 w-24 h-24 bg-yellow-400 rounded-full opacity-20"></div>
+                <div class="absolute -top-5 -right-5 w-20 h-20 bg-pink-400 rounded-full opacity-20"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Members Section -->
+    <section id="family" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Meet The Milan's</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Dad -->
+                <div class="family-member-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a05d5ae4a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Segun Omilana" class="w-full h-full object-cover family-photo">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="title-font text-2xl font-bold">Segun Omilana</h3>
+                            <p class="text-indigo-200">Father • Age 51</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600">The pillar of our family. A loving husband and devoted father who leads with wisdom and strength.</p>
+                        <div class="mt-4 flex space-x-3">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Leader</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Provider</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Mentor</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mom -->
+                <div class="family-member-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Kemi Omilana" class="w-full h-full object-cover family-photo">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="title-font text-2xl font-bold">Kemi Omilana</h3>
+                            <p class="text-indigo-200">Mother • Age 47</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600">The heart of our home. A caring wife and nurturing mother who keeps our family together.</p>
+                        <div class="mt-4 flex space-x-3">
+                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full">Caregiver</span>
+                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full">Teacher</span>
+                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full">Peacemaker</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Habeeb -->
+                <div class="family-member-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Habeeb Omilana" class="w-full h-full object-cover family-photo">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="title-font text-2xl font-bold">Habeeb Omilana</h3>
+                            <p class="text-indigo-200">First Born • Age 20</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600">The responsible first child. A role model to younger siblings with big dreams and ambitions.</p>
+                        <div class="mt-4 flex space-x-3">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Ambitious</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Protective</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Leader</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mariam -->
+                <div class="family-member-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mariam Omilana" class="w-full h-full object-cover family-photo">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="title-font text-2xl font-bold">Mariam Omilana</h3>
+                            <p class="text-indigo-200">Daughter • Age 18</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600">The creative soul. A talented young woman with a passion for art and helping others.</p>
+                        <div class="mt-4 flex space-x-3">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Creative</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Compassionate</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Intelligent</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Harafat -->
+                <div class="family-member-card bg-white rounded-xl shadow-md overflow-hidden md:col-start-2">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Harafat Omilana" class="w-full h-full object-cover family-photo">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="title-font text-2xl font-bold">Harafat Omilana</h3>
+                            <p class="text-indigo-200">Daughter • Age 14</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600">The energetic one. A bright teenager with a love for sports and making everyone laugh.</p>
+                        <div class="mt-4 flex space-x-3">
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Energetic</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Funny</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Athletic</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Al-ameen -->
+                <div class="family-member-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1503454537195-29dc400eb51b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Al-ameen Omilana" class="w-full h-full object-cover family-photo">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="title-font text-2xl font-bold">Al-ameen Omilana</h3>
+                            <p class="text-indigo-200">Youngest • Age 10</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600">The baby of the family. A curious and smart boy who loves technology and adventure.</p>
+                        <div class="mt-4 flex space-x-3">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Curious</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Tech-savvy</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Adventurous</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Story Section -->
+    <section id="story" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Family Story</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline -->
+                    <div class="border-l-2 border-indigo-200 pl-8 space-y-12">
+                        <!-- Parents Marriage -->
+                        <div class="timeline-item relative pl-6">
+                            <div class="bg-white p-6 rounded-xl shadow-sm">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mr-4">
+                                        <i class="fas fa-heart text-xl"></i>
+                                    </div>
+                                    <h3 class="title-font text-xl font-bold text-gray-800">The Beginning</h3>
+                                </div>
+                                <p class="text-gray-600">Segun and Kemi met in their hometown and fell in love. They got married in a beautiful ceremony surrounded by family and friends, marking the start of the Omilana family journey.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Habeeb's Birth -->
+                        <div class="timeline-item relative pl-6">
+                            <div class="bg-white p-6 rounded-xl shadow-sm">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
+                                        <i class="fas fa-baby text-xl"></i>
+                                    </div>
+                                    <h3 class="title-font text-xl font-bold text-gray-800">Habeeb Arrives</h3>
+                                </div>
+                                <p class="text-gray-600">The family grew with the birth of their first child, Habeeb. As the firstborn, he brought immense joy and marked the beginning of their parenting journey.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Mariam's Birth -->
+                        <div class="timeline-item relative pl-6">
+                            <div class="bg-white p-6 rounded-xl shadow-sm">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-pink-600 mr-4">
+                                        <i class="fas fa-baby text-xl"></i>
+                                    </div>
+                                    <h3 class="title-font text-xl font-bold text-gray-800">Mariam Joins</h3>
+                                </div>
+                                <p class="text-gray-600">Two years later, Mariam was born, completing the sibling duo. Her arrival brought a new dynamic to the family as the first daughter.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Harafat's Birth -->
+                        <div class="timeline-item relative pl-6">
+                            <div class="bg-white p-6 rounded-xl shadow-sm">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 mr-4">
+                                        <i class="fas fa-baby text-xl"></i>
+                                    </div>
+                                    <h3 class="title-font text-xl font-bold text-gray-800">Harafat's Arrival</h3>
+                                </div>
+                                <p class="text-gray-600">The family welcomed their third child, Harafat, who brought extra energy and laughter into the household with her vibrant personality.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Al-ameen's Birth -->
+                        <div class="timeline-item relative pl-6">
+                            <div class="bg-white p-6 rounded-xl shadow-sm">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 mr-4">
+                                        <i class="fas fa-baby text-xl"></i>
+                                    </div>
+                                    <h3 class="title-font text-xl font-bold text-gray-800">Al-ameen Completes the Family</h3>
+                                </div>
+                                <p class="text-gray-600">The youngest, Al-ameen, was born, completing the Omilana family. As the baby of the family, he receives love and attention from all his older siblings.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Present Day -->
+                        <div class="timeline-item relative pl-6">
+                            <div class="bg-white p-6 rounded-xl shadow-sm">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mr-4">
+                                        <i class="fas fa-home text-xl"></i>
+                                    </div>
+                                    <h3 class="title-font text-xl font-bold text-gray-800">The Milan's Today</h3>
+                                </div>
+                                <p class="text-gray-600">Today, the Omilana family (affectionately called "The Milan's") continues to grow stronger together. Each member contributes their unique personality to create a loving, supportive, and fun family environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Family Moments</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Family Photo 1 -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Family gathering" class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+                    <div class="p-4 bg-white">
+                        <h3 class="title-font font-bold text-lg mb-2">Family Reunion 2023</h3>
+                        <p class="text-gray-600 text-sm">Celebrating grandma's birthday with the extended family</p>
+                    </div>
+                </div>
+                
+                <!-- Family Photo 2 -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Vacation" class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+                    <div class="p-4 bg-white">
+                        <h3 class="title-font font-bold text-lg mb-2">Summer Vacation</h3>
+                        <p class="text-gray-600 text-sm">Our annual trip to the beach - making memories together</p>
+                    </div>
+                </div>
+                
+                <!-- Family Photo 3 -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Celebration" class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+                    <div class="p-4 bg-white">
+                        <h3 class="title-font font-bold text-lg mb-2">Habeeb's Graduation</h3>
+                        <p class="text-gray-600 text-sm">Celebrating educational achievements as a family</p>
+                    </div>
+                </div>
+                
+                <!-- Family Photo 4 -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1528901166007-3784c7dd3653?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Holiday" class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+                    <div class="p-4 bg-white">
+                        <h3 class="title-font font-bold text-lg mb-2">Christmas Morning</h3>
+                        <p class="text-gray-600 text-sm">Our favorite holiday tradition - opening gifts together</p>
+                    </div>
+                </div>
+                
+                <!-- Family Photo 5 -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dinner" class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+                    <div class="p-4 bg-white">
+                        <h3 class="title-font font-bold text-lg mb-2">Sunday Dinner</h3>
+                        <p class="text-gray-600 text-sm">Mom's special recipes bring us all to the table</p>
+                    </div>
+                </div>
+                
+                <!-- Family Photo 6 -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1527631746610-bca00ab04064?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Game night" class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+                    <div class="p-4 bg-white">
+                        <h3 class="title-font font-bold text-lg mb-2">Family Game Night</h3>
+                        <p class="text-gray-600 text-sm">Competitive but fun evenings full of laughter</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition">View More Memories</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Quote -->
+    <section class="py-16 bg-indigo-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <i class="fas fa-quote-left text-4xl opacity-20 mb-4"></i>
+            <blockquote class="title-font text-2xl md:text-3xl max-w-3xl mx-auto">
+                "The love of a family is life's greatest blessing. We may not have it all together, but together we have it all."
+            </blockquote>
+            <p class="mt-6 text-indigo-200">- The Omilana Family</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xl">O</div>
+                        <h2 class="title-font text-2xl font-bold">THE MILAN'S</h2>
+                    </div>
+                    <p class="mt-2 text-gray-400">The Omilana Family © 2023</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>Created with love by Habeeb Omilana for the Omilana family</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Mobile menu toggle functionality would go here
+        // You would need to add the mobile menu HTML and this JS to make it work
+    </script>
+</body>
+</html>
